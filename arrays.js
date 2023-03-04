@@ -1,3 +1,4 @@
+// This is to add the array challenge file
 //1. Create a fn
 const calcTip = (billValue) => {
   // const bill = 100;
