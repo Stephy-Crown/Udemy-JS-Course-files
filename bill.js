@@ -1,6 +1,6 @@
 // const billValue = 275;
 // const tipOne = 0.15 * billValue; //15% of billValue
-// const tipTwo = 0.2 * billValue; //15% of billValue
+// const tipTwo = 0.2 * billValue; //20% of billValue
 
 // const tip =
 //   billValue >= 50 && billValue <= 300
