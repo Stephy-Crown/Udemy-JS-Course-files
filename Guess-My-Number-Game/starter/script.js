@@ -9,6 +9,9 @@ let secretNumber = Math.trunc(Math.random() * 20) + 1;
 // Its good to keep a variable in your code, and not just rely entirely on the DOM::Its a STATE VARIABLE:::Bcoz the score is part of the application state
 let score = 20;
 
+// VARIABLE FOR HIGHSCORE
+let highScore = 0;
+
 // Add event listener to Check button
 document.querySelector('.check').addEventListener('click', () => {
   // console.log(document.querySelector('.guess').value);
@@ -29,8 +32,13 @@ document.querySelector('.check').addEventListener('click', () => {
     document.querySelector('.message').textContent = '🎉 Correct Number';
     document.querySelector('.number').textContent = secretNumber;
     document.querySelector('body').style.backgroundColor = '#60b347';
-
     document.querySelector('.number').style.width = '30rem';
+
+    // IMPLEMENTING HIGH SCORE::When resetting, everything resets except for the high score
+    if (score > highScore) {
+      highScore = score;
+      document.querySelector('.highscore').textContent = highScore;
+    }
     // When guess too high
   } else if (guess > secretNumber) {
     if (score > 1) {
@@ -61,7 +69,7 @@ document.querySelector('.again').addEventListener('click', () => {
   document.querySelector('.score').textContent = 20;
 
   document.querySelector('.number').textContent = '?';
-  // secretNumber = Math.trunc(Math.random() * 20) + 1;
+  secretNumber = Math.trunc(Math.random() * 20) + 1;
   document.querySelector('body').style.backgroundColor = '#222';
   document.querySelector('.message').textContent = 'Start guessing...';
   document.querySelector('.number').style.width = '15rem';
